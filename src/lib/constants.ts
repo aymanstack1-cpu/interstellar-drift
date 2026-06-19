@@ -3,6 +3,7 @@ export const WORLD_IDS = {
   NEBULA_HEART: 'nebula_heart',
   SINGULARITY: 'singularity',
   SOLAR_SAIL: 'solar_sail',
+  EXHIBITION: 'exhibition',
 } as const;
 
 export type WorldId = (typeof WORLD_IDS)[keyof typeof WORLD_IDS];
@@ -48,6 +49,14 @@ export const WORLD_REGISTRY: WorldEntry[] = [
     subtitle: 'Aurora light',
     color: '#ff8833',
     audioModule: 'solarStrings',
+  },
+  {
+    id: WORLD_IDS.EXHIBITION,
+    path: '/exhibition',
+    label: 'Exhibition',
+    subtitle: 'Gallery of worlds',
+    color: '#c0a060',
+    audioModule: 'driftPad',
   },
 ];
 

@@ -2,8 +2,11 @@ import { Outlet } from 'react-router-dom';
 import { Canvas } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei';
 import WorldSelector from './WorldSelector';
+import PostEffects from '../worlds/common/PostEffects';
 import OverlayUI from './OverlayUI';
 import TransitionOverlay from './TransitionOverlay';
+import AudioController from '../audio/AudioController';
+import NewsletterSignup from './NewsletterSignup';
 
 export default function Layout() {
   return (
@@ -28,10 +31,13 @@ export default function Layout() {
           rotateSpeed={0.5}
         />
         <WorldSelector />
+        <PostEffects />
         <Outlet />
       </Canvas>
       <OverlayUI />
       <TransitionOverlay />
+      <AudioController />
+      <NewsletterSignup />
     </>
   );
 }

@@ -17,6 +17,7 @@ const synthFactories: Record<string, () => SynthModule> = {
   [WORLD_IDS.NEBULA_HEART]: createNebulaBells as () => SynthModule,
   [WORLD_IDS.SINGULARITY]: createSingularityPulse as () => SynthModule,
   [WORLD_IDS.SOLAR_SAIL]: createSolarStrings as () => SynthModule,
+  [WORLD_IDS.EXHIBITION]: createDriftPad as () => SynthModule,
 };
 
 class AudioEngine {

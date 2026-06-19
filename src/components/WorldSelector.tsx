@@ -30,6 +30,7 @@ function Orb({
     nebula_heart: '/nebula',
     singularity: '/singularity',
     solar_sail: '/solar',
+    exhibition: '/exhibition',
   };
 
   const path = routeMap[entry.id] || '/';
