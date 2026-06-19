@@ -2,7 +2,6 @@ import { useEffect, useRef } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Stars } from '@react-three/drei';
 import * as THREE from 'three';
-import CameraController from './common/CameraController';
 import { useWorldStore } from '../store/worldStore';
 import { WORLD_IDS } from '../lib/constants';
 
@@ -26,17 +25,13 @@ function DriftParticles() {
 
   useFrame(() => {
     if (!meshRef.current) return;
-    const geo = meshRef.current.geometry;
-    const positionAttr = geo.attributes.position;
+    const positionAttr = meshRef.current.geometry.attributes.position;
     const p = positionAttr.array as Float32Array;
     for (let i = 0; i < count; i++) {
       p[i * 3] += vel[i * 3];
       p[i * 3 + 1] += vel[i * 3 + 1];
       p[i * 3 + 2] += vel[i * 3 + 2];
-      // Wrap around
-      const r = Math.sqrt(
-        p[i * 3] ** 2 + p[i * 3 + 1] ** 2 + p[i * 3 + 2] ** 2
-      );
+      const r = Math.sqrt(p[i * 3] ** 2 + p[i * 3 + 1] ** 2 + p[i * 3 + 2] ** 2);
       if (r > 8) {
         const scale = 2 / r;
         p[i * 3] *= scale;
@@ -80,20 +75,7 @@ export default function TheDrift() {
   return (
     <>
       <color attach="background" args={['#0a0015']} />
-      <CameraController />
-
-      {/* Main starfield */}
-      <Stars
-        radius={100}
-        depth={50}
-        count={5000}
-        factor={4}
-        saturation={0}
-        fade
-        speed={1}
-      />
-
-      {/* Custom slowly rotating particles */}
+      <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
       <DriftParticles />
     </>
   );
