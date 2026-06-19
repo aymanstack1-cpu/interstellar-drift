@@ -1,0 +1,18 @@
+{
+  "name": "interstellar-drift",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A procedural deep-space generative art experience. No score. No goal. Just presence.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "p5": "^1.11.3"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
