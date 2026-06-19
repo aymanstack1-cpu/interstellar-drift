@@ -1,12 +1,9 @@
 import { OrbitControls } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
 
 export default function CameraController() {
-  const { camera, gl } = useThree();
-
   return (
     <OrbitControls
-      args={[camera, gl.domElement]}
+      makeDefault
       autoRotate
       autoRotateSpeed={0.3}
       enableZoom
