@@ -2,17 +2,33 @@
   "name": "interstellar-drift",
   "version": "1.0.0",
   "private": true,
-  "description": "A procedural deep-space generative art experience. No score. No goal. Just presence.",
+  "description": "An immersive generative 3D art gallery — drift through a starfield, nebula, singularity, and solar aurora.",
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc -b && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "p5": "^1.11.3"
+    "@react-three/drei": "^9.117.0",
+    "@react-three/fiber": "^8.17.0",
+    "@react-three/postprocessing": "^2.16.0",
+    "@supabase/supabase-js": "^2.45.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-router-dom": "^6.26.0",
+    "three": "^0.168.0",
+    "tone": "^14.7.77",
+    "zustand": "^4.5.0"
   },
   "devDependencies": {
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "@types/three": "^0.168.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.45",
+    "tailwindcss": "^3.4.12",
+    "typescript": "^5.5.0",
     "vite": "^5.4.0"
   }
 }

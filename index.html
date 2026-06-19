@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-  <meta name="description" content="A procedural deep-space generative art experience. No score. No goal. Just presence.">
-  <meta name="theme-color" content="#020210">
+  <meta name="description" content="Interstellar Drift — an immersive generative 3D art gallery. Drift through deep space, nebulae, singularities, and solar aurora.">
+  <meta name="theme-color" content="#0a0015">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <title>Interstellar Drift</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html, body {
       width: 100%; height: 100%;
       overflow: hidden;
-      background: #020210;
+      background: #0a0015;
       touch-action: none;
+      -webkit-tap-highlight-color: transparent;
     }
-    canvas { display: block; cursor: none; }
-    #hint {
-      position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%);
-      color: rgba(180,200,255,0.5); font-family: 'Courier New', monospace;
-      font-size: 13px; letter-spacing: 3px; pointer-events: none;
-      transition: opacity 1.5s; z-index: 10;
-      text-align: center;
-    }
-    @media (max-width: 600px) {
-      #hint { font-size: 11px; letter-spacing: 2px; bottom: 40px; }
-    }
+    #root { width: 100%; height: 100%; }
+    canvas { display: block; }
   </style>
 </head>
 <body>
-  <div id="hint">MOVE TO DRIFT &nbsp;·&nbsp; TAP TO WARP</div>
-  <script type="module" src="/src/main.js"></script>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
 </body>
 </html>
